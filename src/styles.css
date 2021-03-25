@@ -1,0 +1,21 @@
+.navbar {
+	background-color: #5a9216;
+}
+
+.navbar a {
+	color: black;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 30px
+}
+
+.jumbotron {
+    background-image: url('/../assets/images/header.jpeg');
+    background-size: cover;
+    color: #fff;
+}
+
+.btn-primary {
+	background-color: #28b5f4;
+	border-color: #28b5f4;
+	color: black;
+}
