@@ -4,12 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
-import { facebook } from 'ngx-bootstrap-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-const icons = {
-  facebook
-};
+import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -18,9 +15,10 @@ const icons = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxBootstrapIconsModule.pick(icons)
+    FontAwesomeModule,
+    ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

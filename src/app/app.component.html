@@ -3,19 +3,72 @@
     <img src="/../assets/images/paw-logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
     Dynamo Dog Walking
   </a>
-  <span class="navbar-text center">
-    <a href="https://www.facebook.com/DynamoDogWalking/" target="_blank">
-      <i-bs name="facebook" width="2rem" height="2rem"></i-bs>
-    </a>
-  </span>
 </nav>
 
 <div class="container-fluid p-0" style="padding-top:75px !important;">
-  <div class="jumbotron jumbotron-fluid text-center">
-  <div class="container">
-    <h1 class="display-4">Friendly, Experienced Dog Walking</h1>
-    <p class="lead">GPS trackable dog walks in March, Cambridgeshire</p>
-    <button type="button" class="btn btn-primary">Book your first walk</button>
+  <div class="jumbotron jumbotron-fluid text-left">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 offset-md-1 col-sm-4 offset-sm-0 col-6 offset-0"><h3>GPS tracked dog walks in March, Cambridgeshire</h3></div>
+      </div>
+      <div class="row" style="padding-top:10px !important;">
+        <div class="col-md-4 offset-md-1 col-7"><button type="button" class="btn btn-primary" (click)="openModal(template)">Book a meet and greet</button></div>
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <h2 class="mx-auto">What we do</h2>
+  </div>
+  <div class="row">
+    <fa-icon [icon]="faBone" size="2x" class="mx-auto"></fa-icon>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-12" style="padding-top:20px !important;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><fa-icon [icon]="faPaw" size="lg" pull="left"></fa-icon> Dog walking</h5>
+          <p class="card-text">This is the perfect choice for dogs who aren't a fan of other dogs or just prefer to be walked alone. This is half an hours walk which can be tracked and timed, messages as we set off/return and  a quick wash so your pet returns home looking and smelling as fresh as when they set off.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-12" style="padding-top:20px !important;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><fa-icon [icon]="faDog" size="lg" pull="left"></fa-icon> Drop-in visits</h5>
+          <p class="card-text">This visit can include various things from playing with the young energetic dogs, to a snooze and a stroke for the more relaxed dogs. I can also feed and administer medicine and I am happy to brush your dogs to help with any matting and messy hair.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-12" style="padding-top:20px !important;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><fa-icon [icon]="faPaw" size="xl" pull="left"></fa-icon><fa-icon [icon]="faPaw" size="xl" pull="left"></fa-icon><fa-icon [icon]="faPaw" size="xl" pull="left"></fa-icon> Group dog walks</h5>
+          <p class="card-text">This walk is perfect for high energy dogs. This walk will be in a park or a safe place and dogs will be allowed off the lead (with permission) to have a good run. This walk will also include a quick wash at the end to make sure your dog returns looking and smelling as good as when they left.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+
+
+<!-- Modal -->
+<ng-template #template>
+   <div class="modal-header">
+      <h4 class="modal-title pull-left">Book a meet and greet</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+         <span aria-hidden="true">×</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      There's nothing here yet!
+   </div>
+   <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Close</button>
+   </div>
+</ng-template>

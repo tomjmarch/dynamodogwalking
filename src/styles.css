@@ -1,21 +1,32 @@
+body {
+	background-color: #eaf8fb;
+}
+
 .navbar {
-	background-color: #5a9216;
+	background-color: #73e8ff;
 }
 
 .navbar a {
-	color: black;
-	font-family: 'Shadows Into Light', cursive;
+	color: #69921f;
+	font-family: 'Rock Salt', cursive;
 	font-size: 30px
 }
 
 .jumbotron {
     background-image: url('/../assets/images/header.jpg');
     background-size: cover;
-    color: #fff;
+    color: #000;
+    padding-top: 20%;
+    padding-bottom: 20%;
 }
 
 .btn-primary {
-	background-color: #28b5f4;
-	border-color: #28b5f4;
+	background-color: #8bc34a;
+	border-color: #8bc34a;
 	color: black;
+}
+
+.modal-title {
+	color: #69921f;
+	font-family: 'Rock Salt', cursive;
 }
