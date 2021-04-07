@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { faPaw, faDog, faBone, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPaw, faDog, faBone, faPaperPlane, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   faDog = faDog;
   faBone = faBone;
   faPaperPlane = faPaperPlane;
+  faAngleDoubleUp = faAngleDoubleUp;
 
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService) {}

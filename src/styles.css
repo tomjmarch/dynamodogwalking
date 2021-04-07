@@ -6,10 +6,24 @@ body {
 	background-color: #73e8ff;
 }
 
+@media screen and (min-width: 577px) {
+  .navbar a {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navbar a {
+    font-size: 1.2rem;
+
+  }
+}
+
 .navbar a {
 	color: #69921f;
 	font-family: 'Rock Salt', cursive;
-	font-size: 30px
+    align-items: center;
+    display: flex; 
 }
 
 .jumbotron {
