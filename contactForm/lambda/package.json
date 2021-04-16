@@ -1,0 +1,11 @@
+{
+  "name": "dynamoDogWalking-contactForm",
+  "author": "Tom J March",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "aws-sdk": "^2.560.0",
+    "axios": "^0.18.1"
+  }
+}

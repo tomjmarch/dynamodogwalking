@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+	<div class="form-group">
+
+	  <label for="name">Your Name</label>
+	  <input type="text" class="form-control" id="name" [(ngModel)]="model.name" name="name">
+
+	  <label for="dogName">Dog's Name</label>
+	  <input type="text" class="form-control" id="dogName" [(ngModel)]="model.dogName" name="dogName">
+
+	  <label for="email">E-mail Address</label>
+	  <input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email">
+
+	  <label for="contactNum">Contact Number</label>
+	  <input type="number" class="form-control" id="contactNum" [(ngModel)]="model.contactNum" name="contactNum">
+
+	  <label for="message">When would you like to book a meet and greet?</label>
+	  <input type="text" class="form-control" id="message" [(ngModel)]="model.message" name="message">
+
+	  <re-captcha required (resolved)="resolved($event)" siteKey='6LeytqwaAAAAAAAY2o1URiRZuHxk9xgNOs3koaE6'></re-captcha>
+
+	  <button type="submit" class="btn btn-primary">Submit</button>
+
+	Data:<br>
+	{{model.name}}<br>
+	{{model.dogName}}<br>
+	{{model.email}}<br>
+	{{model.contactNum}}<br>
+	{{model.message}}<br>
+
+	<br>Status : {{submitted}}
+	</div>
+</form>
