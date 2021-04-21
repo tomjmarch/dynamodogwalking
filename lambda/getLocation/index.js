@@ -2,7 +2,7 @@
 const AWS = require("aws-sdk");
 
 const response = {headers:{ 'Access-Control-Allow-Origin' : '*', 'content-type': 'application/json'}};
-const towns = ["Cambridgeshire", "Wimblington", "March", "Chatteris", "Doddington", "Benwick", "Ramsey","Whittlesey","Warboys","Ely","Somersham"];
+const towns = ["St Ives", "Wimblington", "March", "Chatteris", "Doddington", "Benwick", "Ramsey","Whittlesey","Warboys","Ely","Somersham"];
 
 exports.handler = async (event) => {
     const random = Math.floor(Math.random() * towns.length);

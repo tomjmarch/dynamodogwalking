@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, TemplateRef } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { Subject, timer, interval } from 'rxjs';
 import { HttpResponse } from '@angular/common/http';
 
 import { faPaw, faDog, faBone, faPaperPlane, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
@@ -32,18 +32,28 @@ export class AppComponent implements OnInit, OnDestroy {
     this.modalRef = this.modalService.show(template);
   }
 
-  ngOnInit() {
+  callGetLocationApi() {
      this.apiService
         .getLocation()
         .pipe(takeUntil(this.destroy$))
         .subscribe((data) => {
         	let response = JSON.stringify(data);
         	this.location = JSON.parse(response).location;
-        //	this.location = response;
         }), 
         (error => {
           this.location = 'Cambridgeshire';
         })
+  }
+
+  ngOnInit() {
+  	this.callGetLocationApi();
+    var subscription = timer(0,750).subscribe(x => {
+    	this.callGetLocationApi();
+    });
+    interval(9001).subscribe(x => {
+    	subscription.unsubscribe();
+    	this.location = 'Cambridgeshire';
+    });
   }
 
   ngOnDestroy() {
