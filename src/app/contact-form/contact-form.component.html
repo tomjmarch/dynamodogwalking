@@ -1,32 +1,79 @@
 <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-	<div class="form-group">
-
-	  <label for="name">Your Name</label>
-	  <input type="text" class="form-control" id="name" [(ngModel)]="model.name" name="name">
-
-	  <label for="dogName">Dog's Name</label>
-	  <input type="text" class="form-control" id="dogName" [(ngModel)]="model.dogName" name="dogName">
-
-	  <label for="email">E-mail Address</label>
-	  <input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email">
-
-	  <label for="contactNum">Contact Number</label>
-	  <input type="number" class="form-control" id="contactNum" [(ngModel)]="model.contactNum" name="contactNum">
-
-	  <label for="message">When would you like to book a meet and greet?</label>
-	  <input type="text" class="form-control" id="message" [(ngModel)]="model.message" name="message">
-
-	  <re-captcha required (resolved)="resolved($event)" siteKey='6LeytqwaAAAAAAAY2o1URiRZuHxk9xgNOs3koaE6'></re-captcha>
-
-	  <button type="submit" class="btn btn-primary">Submit</button>
-
-	Data:<br>
-	{{model.name}}<br>
-	{{model.dogName}}<br>
-	{{model.email}}<br>
-	{{model.contactNum}}<br>
-	{{model.message}}<br>
-
-	<br>Status : {{submitted}}
+	<div class="form-group row">
+	  <label for="name" class="col-sm-3 col-form-label">Your Name</label>
+	  <div class="col-sm-9">
+	  	<div class="input-group">
+		  	<div class="input-group-prepend">
+		  		<div class="input-group-text"><fa-icon [icon]="faUser"></fa-icon></div>
+		  	</div>
+		  	<input required minlength="3" type="text" class="form-control" id="name" [(ngModel)]="model.name" name="name">
+		 </div>
+	  </div>
 	</div>
+
+	<div class="form-group row">
+	  <label for="dogName" class="col-sm-3 col-form-label">Dog's Name</label>
+	  <div class="col-sm-9">
+	  	<div class="input-group">
+		  	<div class="input-group-prepend">
+		  		<div class="input-group-text"><fa-icon [icon]="faDog"></fa-icon></div>
+		  	</div>
+		  	<input type="text" class="form-control" id="dogName" [(ngModel)]="model.dogName" name="dogName">
+		 </div>
+	  </div>
+	</div>
+
+	<div class="form-group row">
+	  <label for="email" class="col-sm-3 col-form-label">E-mail</label>
+	  <div class="col-sm-9">
+	  	<div class="input-group">
+		  	<div class="input-group-prepend">
+		  		<div class="input-group-text">@</div>
+		  	</div>
+	  		<input required minlength="6" type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email">
+		 </div>
+	  </div>
+	</div>
+
+	<div class="form-group row">
+	  <label for="contactNum" class="col-sm-3 col-form-label">Phone Num.</label>
+	  <div class="col-sm-9">
+	  	<div class="input-group">
+		  	<div class="input-group-prepend">
+		  		<div class="input-group-text"><fa-icon [icon]="faPhoneAlt"></fa-icon></div>
+		  	</div>
+	  		<input type="text" class="form-control" id="contactNum" [(ngModel)]="model.contactNum" name="contactNum">
+		 </div>
+	  </div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-sm-12">
+		  <label for="message" class="col-form-label">When would you like to book a meet and greet?</label>
+		  <textarea type="text" class="form-control" id="message" [(ngModel)]="model.message" name="message" rows="3"></textarea>
+		  <small id="messageHelpText" class="form-text text-muted" [hidden]="!model.dogName">Please also let me know a bit about {{model.dogName}}!</small>
+		  <small id="messageHelpText" class="form-text text-muted" [hidden]="model.dogName">Please also let me know a bit about your dog!</small>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-sm-12">
+	  		<re-captcha required (resolved)="resolved($event)" [(ngModel)]="model.token" name="captchaToken" siteKey='6LeytqwaAAAAAAAY2o1URiRZuHxk9xgNOs3koaE6'></re-captcha>
+	  	</div>
+	 </div>
+
+	 <div class="alert alert-danger" role="alert" [hidden]="!failed === true">
+	 	Oops, something went wrong! Please try that again!
+	 </div>
+
+	 <div class="alert alert-success" role="alert" [hidden]="!success === true">
+	 	Form submitted! I'll be in touch!
+	 </div>
+
+	<div class="form-group row">
+		<div class="col-sm-12">
+	  		<button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Submit</button>
+	  	</div>
+	 </div>
+
 </form>

@@ -4,8 +4,9 @@ export class Contact {
     public name: string,
     public dogName: string,
     public email: string,
-    public contactNum: number,
-    public message: string
+    public contactNum: string,
+    public message: string,
+    public token: string
   ) {  }
 
 }

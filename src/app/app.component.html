@@ -9,16 +9,37 @@
   <div class="jumbotron jumbotron-fluid text-left">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 offset-md-1 col-sm-4 offset-sm-0 col-6 offset-0"><h3>GPS tracked dog walks in Cambridgeshire</h3></div>
+        <div class="col-lg-3 offset-lg-0 col-md-3 offset-md-0 col-sm-4 offset-sm-0 col-6 offset-0"><h3>GPS tracked dog walks in {{this.location}}</h3></div>
       </div>
       <div class="row" style="padding-top:10px !important;">
-        <div class="col-md-4 offset-md-1 col-7"><button type="button" class="btn btn-primary" (click)="openModal(template)">Book a meet and greet</button></div>
+        <div class="col-lg-3 offset-lg-0 col-md-3 offset-md-0 col-sm-4 offset-sm-0 col-6 offset-0"><button type="button" class="btn btn-primary" (click)="openModal(template)">Book a meet and greet</button></div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="container">
+  <div class="row">
+    <h2 class="mx-auto">About me</h2>
+  </div>
+  <div class="row">
+    <fa-icon [icon]="faBone" size="2x" class="mx-auto"></fa-icon>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2 col-12" style="padding-top:20px !important;">
+      <div class="card">
+        <div class="row card-body">
+          <div class="col-sm-6">
+            <p class="card-text">My name is Sam and I am the owner of Dynamo Dog Walking.<br><br>I am a very keen animal lover that has lots of animal care qualifications, ranging from small animals through to farm animals. I also worked in Grays Kennels in Cumbria, where I realised I wanted to work with dogs every day!</p>
+          </div>
+          <img class="col-sm-6" src="/../assets/images/sam.jpeg" alt="Sam March">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container" style="padding-top:20px !important;">
   <div class="row">
     <h2 class="mx-auto">What we do</h2>
   </div>
@@ -30,15 +51,15 @@
     <div class="col-md-4 col-12" style="padding-top:20px !important;">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><fa-icon [icon]="faPaw" size="lg"></fa-icon> Dog walking<small class="float-right py-1">£8, 30mins</small></h5>
-          <p class="card-text">This is the perfect choice for dogs who aren't a fan of other dogs or just prefer to be walked alone. This is half an hours walk which can be tracked and timed, messages as we set off/return and  a quick wash so your pet returns home looking and smelling as fresh as when they set off.</p>
+          <h5 class="card-title"><fa-icon [icon]="faPaw" size="lg"></fa-icon> Dog walking<small class="float-right py-1">£8, 30mins+</small></h5>
+          <p class="card-text">This is the perfect choice for dogs who prefer to be walked alone. This is half an hour of walking which can be tracked via our app and a tracker on the collar and timed, and a quick wash if they’re muddy so your pet returns home looking and smelling as fresh as when they set off.</p>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-12" style="padding-top:20px !important;">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><fa-icon [icon]="faDog" size="lg"></fa-icon> Drop-in visits<small class="float-right py-1">£8, 30mins</small></h5>
+          <h5 class="card-title"><fa-icon [icon]="faDog" size="lg"></fa-icon> Drop-in visits<small class="float-right py-1">£8, 30mins+</small></h5>
           <p class="card-text">This visit can include various things from playing with the young energetic dogs, to a snooze and a stroke for the more relaxed dogs. I can also feed and administer medicine and I am happy to brush your dogs to help with any matting and messy hair.</p>
         </div>
       </div>
@@ -46,8 +67,8 @@
     <div class="col-md-4 col-12" style="padding-top:20px !important;">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><fa-icon [icon]="faPaw" size="xl" style="padding-right:3px;"></fa-icon><fa-icon [icon]="faPaw" size="xl"></fa-icon> Group dog walks<small class="float-right py-1">£12, 1hr</small></h5>
-          <p class="card-text">This walk is perfect for high energy dogs. This walk will be in a park or a safe place and dogs will be allowed off the lead (with permission) to have a good run. This walk will also include a quick wash at the end to make sure your dog returns looking and smelling as good as when they left.</p>
+          <h5 class="card-title"><fa-icon [icon]="faPaw" size="xl" style="padding-right:3px;"></fa-icon><fa-icon [icon]="faPaw" size="xl"></fa-icon> Group dog walks<small class="float-right py-1">£12, 1hr+</small></h5>
+          <p class="card-text">This walk is perfect for high energy dogs. This walk will be in a park or a safe place and dogs will be allowed off the lead (with permission) to have a run and a play. This walk will also include a quick wash at the end if they’re muddy to make sure your dog returns looking and smelling as good as when they left.</p>
         </div>
       </div>
     </div>
@@ -72,7 +93,7 @@
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5ZEahbN10hw" allowfullscreen></iframe>
           </div>
           <div class="card-body">
-          <p class="card-text">Safety is key for me so every walk is GPS tracked, and you get a text when leave and when we get back home. Whether your dog can go off lead or not, they'll get a full walk and play. Finally, every dog gets a quick wash so they return home smelling fresh!
+          <p class="card-text">Safety is key for me so every walk is GPS tracked with a tracker on your dog and on me via an app that sends you a text when we leave and when we get back home. Whether your dog can go off lead or not, they will get a full walk and play. Finally, every dog gets a quick wash if needed so they return home smelling fresh!
 
           <br><br><small>I'm DBS checked and available for walks in Wimblington, Chatteris, Doddington, March and wider Cambridgeshire.</small></p>
         </div>
@@ -94,8 +115,8 @@
     <div class="col-md-8 offset-md-2 col-12" style="padding-top:20px !important;">
       <div class="card">
         <div class="card-body">
-          <img class="card-img-top" src="/../assets/images/coco.jpg" alt="Card image cap">
-          <p class="card-text">Let me introduce you to Coco!<br><br>She's a 10 year old rescue Rottweiler that's a bit nervous of everything! We've had her around 6/7 months now in that time we've had to remove a toe so she now has an alien foot!<br><br>If you ever see us out on a walk she'll definitely bark but please do say hello! She'll be wearing a muzzle just in case but she really just wants a stroke!<br><br>Unfortunately she wasn't socialized when she was younger so she's very barky at everyone and everything that moves but if the barking doesn't scare you she'll happily accept your cuddles!</p>
+          <img class="card-img-top" src="/../assets/images/coco.jpg" alt="Coco the Dog">
+          <p class="card-text">Let me introduce you to Coco!<br><br>She's a 10 year old rescue Rottweiler that's a bit nervous of everything! We've had her around 6/7 months now and she has come on leaps and bounds from being very defensive to now letting strangers pet her. Unfortunately, in that time we have had to remove a toe due to cancer.<br><br>If you ever see us out on a walk she'll definitely bark but please do say hello! She'll be wearing a muzzle just in case but she really just wants a stroke! Her favourite way to greet people is by pushing her head into your leg to make sure she gets all of your attention!<br><br>Unfortunately she wasn't socialized when she was younger so she's very barky at everyone and everything that moves but if the barking doesn't scare you she'll happily accept your cuddles!</p>
           </div>
         </div>
       </div>
@@ -109,7 +130,7 @@
       <br><br><a href="mailto:sam@dynamodogwalking.com"><fa-icon [icon]="faPaperPlane" pull="left"></fa-icon> E-mail me</a>
     </p>
     <p>© Dynamo Dog Walking, 2021
-    <br>Sam March, Ash Tree Close
+    <br>Sam March, Wimblington
     <br>March, Cambridgeshire, UK</p>
   </div>
 </footer>
@@ -124,8 +145,5 @@
    </div>
    <div class="modal-body">
       <app-contact-form></app-contact-form>
-   </div>
-   <div class="modal-footer">
-      <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Close</button>
    </div>
 </ng-template>
