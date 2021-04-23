@@ -16,6 +16,7 @@ import { ApiService } from './api-service.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'dynamoDogWalking';
+  locationArray = [];
   location = '';
 
   faPaw = faPaw;
@@ -38,19 +39,25 @@ export class AppComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.destroy$))
         .subscribe((data) => {
         	let response = JSON.stringify(data);
-        	this.location = JSON.parse(response).location;
+        	this.locationArray = JSON.parse(response);
         }), 
         (error => {
-          this.location = 'Cambridgeshire';
+          this.locationArray = ["Cambridgeshire"];
         })
   }
 
+  callGetSpecificLocation() {
+  	const random = Math.floor(Math.random() * this.locationArray.length);
+  	return this.locationArray[random];
+  }
+
   ngOnInit() {
+
   	this.callGetLocationApi();
-    var subscription = timer(0,750).subscribe(x => {
-    	this.callGetLocationApi();
+    var subscription = timer(0,550).subscribe(x => {
+    	this.location = this.callGetSpecificLocation();
     });
-    interval(9001).subscribe(x => {
+    interval(10000).subscribe(x => {
     	subscription.unsubscribe();
     	this.location = 'Cambridgeshire';
     });
