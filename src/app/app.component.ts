@@ -3,7 +3,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject, timer, interval } from 'rxjs';
 import { HttpResponse } from '@angular/common/http';
 
-import { faPaw, faDog, faBone, faPaperPlane, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
+import { faPaw, faDog, faBone, faPaperPlane, faAngleDoubleUp, faCamera } from '@fortawesome/free-solid-svg-icons';
 
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal'
 
@@ -18,12 +18,14 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'dynamoDogWalking';
   locationArray = [];
   location = '';
+  locationNumber = 0;
 
   faPaw = faPaw;
   faDog = faDog;
   faBone = faBone;
   faPaperPlane = faPaperPlane;
   faAngleDoubleUp = faAngleDoubleUp;
+  faCamera = faCamera;
 
   modalRef: BsModalRef;
   destroy$: Subject<boolean>= new Subject<boolean>();
@@ -47,17 +49,23 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   callGetSpecificLocation() {
-  	const random = Math.floor(Math.random() * this.locationArray.length);
-  	return this.locationArray[random];
+    if (this.locationNumber == this.locationArray.length -1) {
+      this.locationNumber = 0;
+    } else {
+      this.locationNumber = this.locationNumber + 1;
+    }
+    // No longer using random place names
+  	// const random = Math.floor(Math.random() * this.locationArray.length);
+  	return this.locationArray[this.locationNumber];
   }
 
   ngOnInit() {
 
   	this.callGetLocationApi();
-    var subscription = timer(0,550).subscribe(x => {
-    	this.location = this.callGetSpecificLocation();
+    var subscription = timer(0,150).subscribe(x => {
+      this.location = this.callGetSpecificLocation();
     });
-    interval(10000).subscribe(x => {
+    interval(2400).subscribe(x => {
     	subscription.unsubscribe();
     	this.location = 'Cambridgeshire';
     });

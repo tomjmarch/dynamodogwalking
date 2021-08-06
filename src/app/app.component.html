@@ -9,7 +9,7 @@
   <div class="jumbotron jumbotron-fluid text-left">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 offset-lg-0 col-md-3 offset-md-0 col-sm-4 offset-sm-0 col-6 offset-0"><h3>GPS tracked dog walks in {{this.location}}</h3></div>
+        <div class="col-lg-3 offset-lg-0 col-md-3 offset-md-0 col-sm-4 offset-sm-0 col-6 offset-0"><h4>GPS tracked dog walks in {{this.location}}</h4></div>
       </div>
       <div class="row" style="padding-top:10px !important;">
         <div class="col-lg-3 offset-lg-0 col-md-3 offset-md-0 col-sm-4 offset-sm-0 col-6 offset-0"><button type="button" class="btn btn-primary" (click)="openModal(template)">Book a meet and greet</button></div>
@@ -28,12 +28,10 @@
 
   <div class="row">
     <div class="col-md-8 offset-md-2 col-12" style="padding-top:20px !important;">
-      <div class="card">
+      <div class="card text-center">
         <div class="row card-body">
-          <div class="col-sm-6">
-            <p class="card-text">My name is Sam and I am the owner of Dynamo Dog Walking.<br><br>I am a very keen animal lover that has lots of animal care qualifications, ranging from small animals through to farm animals. I also worked in Grays Kennels in Cumbria, where I realised I wanted to work with dogs every day!</p>
-          </div>
-          <img class="col-sm-6" src="/../assets/images/sam.jpg" alt="Sam March">
+          <p class="card-text">My name is Sam and I am the owner of Dynamo Dog Walking.<br><br>I am a very keen animal lover that has lots of animal care qualifications, ranging from small animals through to farm animals. I also worked in Grays Kennels in Cumbria, where I realised I wanted to work with dogs every day!<br><br></p>
+          <img class="card-img-top" src="/../assets/images/sam.jpg" alt="Sam March">
         </div>
       </div>
     </div>
@@ -76,6 +74,18 @@
 
 </div>
 
+<div class="container" style="padding-top:20px !important;">
+  <div class="row">
+    <a href="https://instagram.com/dynamo_dogwalking" target="_blank" class="text-decoration-none mx-auto">
+      <h2>
+        <fa-icon [icon]="faCamera" class="mx-auto"></fa-icon>
+        Check out my Instagram
+        <fa-icon [icon]="faCamera" class="mx-auto"></fa-icon>
+      </h2>
+    </a>
+  </div>
+
+<br>
 
 <div class="container" style="padding-top:20px !important;">
   <div class="row">
@@ -90,7 +100,7 @@
       <div class="card">
         <div class="card-body">
           <div class="embed-responsive embed-responsive-1by1">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5ZEahbN10hw" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5ZEahbN10hw" loading="lazy" allowfullscreen></iframe>
           </div>
           <div class="card-body">
           <p class="card-text">Safety is key for me so every walk is GPS tracked with a tracker on your dog and on me via an app that sends you a text when we leave and when we get back home. Whether your dog can go off lead or not, they will get a full walk and play. Finally, every dog gets a quick wash if needed so they return home smelling fresh!
@@ -129,9 +139,9 @@
       <a href="#"><fa-icon [icon]="faAngleDoubleUp" pull="left"></fa-icon> Back to top</a>
       <br><br><a href="mailto:sam@dynamodogwalking.com"><fa-icon [icon]="faPaperPlane" pull="left"></fa-icon> E-mail me</a>
     </p>
-    <p>© Dynamo Dog Walking, 2021
+    <p><small>© Dynamo Dog Walking, 2021
     <br>Sam March, Wimblington
-    <br>March, Cambridgeshire, UK</p>
+    <br>Dog walks in March, Chatteris, Doddington and Benwick</small></p>
   </div>
 </footer>
 
